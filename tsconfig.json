@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "module": "CommonJS",
+    "isolatedModules": true,
+    "noImplicitOverride": true,
+    "lib": ["esnext"],
+    "baseUrl": ".",
+    "types": ["node", "jest"],
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+    "outDir": "./dist",
+  },
+  "include": ["./src/**/*.ts", "reset.d.ts"],
+  "exclude": ["**/node_modules/*"]
+}
