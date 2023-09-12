@@ -1,4 +1,7 @@
 import { Triggers } from './ability';
+import { Card } from './cards';
+import CopperCard from './cards/copper';
+import EstateCard from './cards/estate';
 import { Pile } from './pile';
 import { Player } from './player';
 import { Client } from './server/client';
@@ -64,5 +67,12 @@ export class Kingdom {
 
   getPlayers(): Player[] {
     throw new Error('Method not implemented.');
+  }
+
+  getStartCards(): Card[] {
+    return [
+      ...new Array(3).fill(null).map(() => new EstateCard()),
+      ...new Array(7).fill(null).map(() => new CopperCard()),
+    ];
   }
 }

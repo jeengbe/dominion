@@ -8,8 +8,6 @@ import {
   WhenPlayAbilityContext,
 } from './ability';
 import { Card, CardType, EventCard } from './cards';
-import CopperCard from './cards/copper';
-import EstateCard from './cards/estate';
 import { Kingdom } from './kingdom';
 import { Pile } from './pile';
 import { Price } from './price';
@@ -30,15 +28,9 @@ export class Player {
   ) {
     client.setPlayer(this);
 
-    for (let i = 0; i < 3; i++) {
-      this.deck.push(new EstateCard());
-    }
-
-    for (let i = 0; i < 7; i++) {
-      this.deck.push(new CopperCard());
-    }
-
+    this.deck.push(...kingdom.getStartCards());
     this.deck.shuffle();
+
     this.drawCards(5);
   }
 
